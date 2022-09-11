@@ -11,6 +11,7 @@ interface State {
 }
 type Props = {
   serviceId: string;
+  onReserveClick: () => void;
 };
 type Service = {
   _id: string;
@@ -54,7 +55,10 @@ const Detail = (props: Props) => {
         <div className="text-3xl mt-10 md:text-5xl">{state.name}</div>
         <p className="text-xl mt-[14px] md:text-[32px]">฿ {state.price}</p>
         <pre className="whitespace-pre-wrap my-[24px]">{state.description}</pre>
-        <button className="px-8 py-2 bg-blue-500 text-white mt-4 cursor-pointer hover:bg-blue-400 hover:text-gray-100">
+        <button
+          onClick={props.onReserveClick}
+          className="px-8 py-2 bg-blue-500 text-white mt-4 cursor-pointer hover:bg-blue-400 hover:text-gray-100"
+        >
           จองบริการ
         </button>
       </div>
@@ -65,6 +69,7 @@ const Detail = (props: Props) => {
 const fetchDetailById = async (id: string): Promise<Service> => {
   const resp = await fetch(`${API_PATH}/v1/services/${id}`);
   const json = await resp.json();
+  console.log("x");
   return json;
 };
 

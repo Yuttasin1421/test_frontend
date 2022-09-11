@@ -19,6 +19,7 @@ const service = (props: Props) => {
         <Image
           loader={() => props.imgSrc}
           src={props.imgSrc}
+          unoptimized={true}
           alt="service_picture"
           layout="fill"
         />

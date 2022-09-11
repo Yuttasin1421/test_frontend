@@ -1,4 +1,9 @@
-const order = () => {
-  return <div>order list page </div>;
+import Orders from "../../components/orders";
+const Order = () => {
+  return (
+    <>
+      <Orders />
+    </>
+  );
 };
-export default order;
+export default Order;
