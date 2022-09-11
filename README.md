@@ -11,8 +11,10 @@ at postman by register api (https://api-candidate.workforce-staging.com/v1/auth/
 Second, run the development server:
 
 ```bash
+npm install
 npm run dev
 # or
+yarn install
 yarn dev
 ```
 
